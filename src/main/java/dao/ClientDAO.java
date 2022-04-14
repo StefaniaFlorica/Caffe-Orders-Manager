@@ -5,8 +5,7 @@ import model.Client;
 import java.util.List;
 
 /**
- * Clasa mosteneste clasa AbstractDAO, iar tipul generic este inlocuit cu tipul clasei Client
- * Nu are variabile-instanta, daor suprascrie metodele din clasa-parinte cu apeluri "super"
+ * Clasa mosteneste clasa AbstractDAO, iar tipul generic este inlocuit cu tipul clasei ClientNu are variabile-instanta, daor suprascrie metodele din clasa-parinte cu apeluri "super"
  */
 public class ClientDAO extends AbstractDAO<Client> {
     /**

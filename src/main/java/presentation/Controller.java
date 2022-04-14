@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 /**
  *Clasa pentru controlul view-ului principal.
- *
  */
 public class Controller {
     /**

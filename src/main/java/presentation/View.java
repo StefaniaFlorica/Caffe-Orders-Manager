@@ -14,8 +14,7 @@ public class View extends JFrame {
     private JButton btnProductMenu;
     private JButton btnComandaMenu;
     /**
-     * Contructor fara parametrii. Aici sunt initializate toate elementele principale ale interfetei. Este formata dintr-un JFrame, care contine
-     * un JPanel, cu 3 JButtons.
+     * Contructor fara parametrii. Aici sunt initializate toate elementele principale ale interfetei. Este formata dintr-un JFrame, care contineun JPanel, cu 3 JButtons.
      */
     public View() {
         setBackground(new Color(255, 245, 238));

@@ -105,7 +105,7 @@ public class ProductBLL {
     {
         int result=productDAO.delete(id);
         //daca metoda delete(id) returneaza -1, inseamna ca nu a fost gasit produsul cu id-ul dat, deci stergerea nu a avut loc
-        if(result==-1)
+        if(result==0)
         {
             throw new NoSuchElementException("Product with id = "+id+" was not found!");
         }

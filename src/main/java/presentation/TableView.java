@@ -16,8 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Clasa care implementeaza interfata grafica cu utilizatorul, folosind elemente ale bibliotecii Java Swing. Contine concepte de Java Reflection
- * pentru a crea o interfata generica pentru orice clasa de tipul Client,Comanda sau Product.
+ * Clasa care implementeaza interfata grafica cu utilizatorul, folosind elemente ale bibliotecii Java Swing. Contine concepte de Java Reflectionpentru a crea o interfata generica pentru orice clasa de tipul Client,Comanda sau Product.
  */
 public class TableView extends JFrame{
     private Class type;
@@ -31,9 +30,7 @@ public class TableView extends JFrame{
     private JTable table;
 
     /**
-     * Constructor cu un parametru de tip Class.
-     * Seteaza elementele principale ale interfetei grafice, folosind Java Reflection, adaugand JLabels si JTextFields in corespunzatoare Field-urile clasei Class trimisa ca parametru.
-     * Sunt instantiate si restul componentelor principale ale GUI-ului, precum JPanels, JButtons si JTable.
+     * Constructor cu un parametru de tip Class.Seteaza elementele principale ale interfetei grafice, folosind Java Reflection, adaugand JLabels si JTextFields in corespunzatoare Field-urile clasei Class trimisa ca parametru.Sunt instantiate si restul componentelor principale ale GUI-ului, precum JPanels, JButtons si JTable.
      * @param type o instanta a clasei Class, facand referire la tipul clasei-model pentru care a fost creata interfata
      */
 

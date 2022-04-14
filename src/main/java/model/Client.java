@@ -1,8 +1,7 @@
 package model;
 
 /**
- * Clasa-model pentru tabelul din baza de date.
- * Are ca variabile-instanta obiecte corespunzatoare tipului de date stocate in tabelul din baza de date.
+ * Clasa-model pentru tabelul din baza de date.Are ca variabile-instanta obiecte corespunzatoare tipului de date stocate in tabelul din baza de date.
  */
 public class Client {
     private int id;

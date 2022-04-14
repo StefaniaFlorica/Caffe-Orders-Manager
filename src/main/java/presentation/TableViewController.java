@@ -18,12 +18,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
- * Clasa-controller pentru interfata grafica cu utilizatorul, instanta a clasei TableView.
- * Are ca varibile-instanta:
- * ->un obiect de tipul TableView(interfata care trebuie controlata)
- * ->un obiect de tipul View(referinta a intefetei principale, prin intermediul careia s-a creat obiectul TableView, la apasarea unuia dintre butoane
- * ->trei instante, ce respecta design pattern-ul Singleton, ale claselor-model
- *
+ * Clasa-controller pentru interfata grafica cu utilizatorul, instanta a clasei TableView.Are ca varibile-instanta:un obiect de tipul TableView(interfata care trebuie controlata),un obiect de tipul View(referinta a intefetei principale, prin intermediul careia s-a creat obiectul TableView, la apasarea unuia dintre butoane,trei instante, ce respecta design pattern-ul Singleton, ale claselor-model
  */
 public class TableViewController {
     private TableView tableView;
@@ -33,8 +28,7 @@ public class TableViewController {
     private static ComandaBLL comandaBLL= new ComandaBLL();
 
     /**
-     * Constructor care instantiaza varibilele-instanta tabelView si mainView cu referintele obiectelor trimise ca parametrii
-     * Apeleaza metodele pentru adaugare de ActionListeners butoanelor din tableView
+     * Constructor care instantiaza varibilele-instanta tabelView si mainView cu referintele obiectelor trimise ca parametriiApeleaza metodele pentru adaugare de ActionListeners butoanelor din tableView
      * @param tableView1
      * @param mainView1
      */
@@ -94,8 +88,7 @@ public class TableViewController {
     class InsertListener implements ActionListener{
 
         /**
-         * Metoda suprascrisa a interfetei ActionListener, care defineste comportamentul aplicatiei la apasarea butonului Insert.
-         * Se apeleaza metode ale claselor BLL(folosind variabilele-instanta ale claselor respective) care faciliteaza accesul si operatiile cu baza de date
+         * Metoda suprascrisa a interfetei ActionListener, care defineste comportamentul aplicatiei la apasarea butonului Insert.Se apeleaza metode ale claselor BLL(folosind variabilele-instanta ale claselor respective) care faciliteaza accesul si operatiile cu baza de date
          * @param e obiect de tipul ActionEvent
          */
         @Override
@@ -184,8 +177,7 @@ public class TableViewController {
      */
     class DeleteListener implements ActionListener{
         /**
-         * Metoda suprascrisa a interfetei ActionListener, care defineste comportamentul aplicatiei la apasarea butonului Delete.
-         * Se apeleaza metode ale claselor BLL(folosind variabilele-instanta ale claselor respective) care faciliteaza accesul si operatiile cu baza de date
+         * Metoda suprascrisa a interfetei ActionListener, care defineste comportamentul aplicatiei la apasarea butonului Delete.Se apeleaza metode ale claselor BLL(folosind variabilele-instanta ale claselor respective) care faciliteaza accesul si operatiile cu baza de date
          * @param e obiect de tipul ActionEvent
          */
         @Override
@@ -196,10 +188,16 @@ public class TableViewController {
             }
             else if(tableView.getClassType().getSimpleName().equals("Client"))
             {
-                List<String> txtFields=tableView.getText();
-                int id=Integer.parseInt(txtFields.get(0));
-                clientBLL.deleteClient(id);
-                tableView.generateTable(clientBLL.findAllClients());
+                try {
+                    List<String> txtFields = tableView.getText();
+                    int id = Integer.parseInt(txtFields.get(0));
+                    clientBLL.deleteClient(id);
+                    tableView.generateTable(clientBLL.findAllClients());
+                }catch(NoSuchElementException ex)
+                {
+                    JOptionPane.showMessageDialog(null,ex.getMessage());
+                }
+
             }
             else
             {
@@ -221,8 +219,7 @@ public class TableViewController {
      */
     class UpdateListener implements ActionListener{
         /**
-         * Metoda suprascrisa a interfetei ActionListener, care defineste comportamentul aplicatiei la apasarea butonului Update.
-         * Se apeleaza metode ale claselor BLL(folosind variabilele-instanta ale claselor respective) care faciliteaza accesul si operatiile cu baza de date
+         * Metoda suprascrisa a interfetei ActionListener, care defineste comportamentul aplicatiei la apasarea butonului Update.Se apeleaza metode ale claselor BLL(folosind variabilele-instanta ale claselor respective) care faciliteaza accesul si operatiile cu baza de date
          * @param e obiect de tipul ActionEvent
          */
         @Override
@@ -294,8 +291,7 @@ public class TableViewController {
     class ViewListener implements ActionListener{
 
         /**
-         * Metoda suprascrisa a interfetei ActionListener, care defineste comportamentul aplicatiei la apasarea butonului ViewAll.
-         * Se apeleaza metode ale claselor BLL(folosind variabilele-instanta ale claselor respective) care faciliteaza accesul si operatiile cu baza de date
+         * Metoda suprascrisa a interfetei ActionListener, care defineste comportamentul aplicatiei la apasarea butonului ViewAll.Se apeleaza metode ale claselor BLL(folosind variabilele-instanta ale claselor respective) care faciliteaza accesul si operatiile cu baza de date
          * @param e obiect de tipul ActionEvent
          */
         @Override

@@ -1,11 +1,15 @@
 package model;
-
+/**
+ * Clasa-model pentru tabelul din baza de date.Are ca variabile-instanta obiecte corespunzatoare tipului de date stocate in tabelul din baza de date.
+ */
 public class Product {
     private int id;
     private String name;
     private double price;
     private int stock;
-
+    /**
+     * Constructor fara parametrii
+     */
     public Product()
     {
 

@@ -129,7 +129,7 @@ public class ClientBLL {
     {
         int result=clientDAO.delete(id);
         //daca metoda delete(id) returneaza -1, inseamna ca nu a fost gasit clientul cu id-ul dat, deci stergerea nu a avut loc
-        if(result==-1)
+        if(result==0)
         {
             throw new NoSuchElementException("Client with id = "+id+" was not found!");
         }

@@ -11,8 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 /**
- * Clasa mosteneste clasa AbstractDAO, iar tipul generic este inlocuit cu tipul clasei Comanda
- * Nu are variabile-instanta, daor suprascrie metodele din clasa-parinte cu apeluri "super"
+ * Clasa mosteneste clasa AbstractDAO, iar tipul generic este inlocuit cu tipul clasei ComandaNu are variabile-instanta, daor suprascrie metodele din clasa-parinte cu apeluri "super"
  */
 public class ComandaDAO extends AbstractDAO<Comanda> {
 

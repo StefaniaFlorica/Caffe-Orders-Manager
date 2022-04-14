@@ -4,8 +4,7 @@ import model.Product;
 
 import java.util.List;
 /**
- * Clasa mosteneste clasa AbstractDAO, iar tipul generic este inlocuit cu tipul clasei Product
- * Nu are variabile-instanta, doar suprascrie metodele din clasa-parinte cu apeluri "super"
+ * Clasa mosteneste clasa AbstractDAO, iar tipul generic este inlocuit cu tipul clasei ProductNu are variabile-instanta, doar suprascrie metodele din clasa-parinte cu apeluri "super"
  */
 public class ProductDAO extends AbstractDAO<Product>{
     /**

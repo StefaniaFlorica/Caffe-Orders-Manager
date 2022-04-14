@@ -15,11 +15,7 @@ import java.util.logging.Logger;
 import connection.ConnectionFactory;
 
 /**
- *Clasa de tip Data-Access-Object, folosita ca intermediar intre Business Logic si Database Connection.
- * Are ca avriabile-instanta:
- * -> obiectul LOGGER, folosit pentru logging si eventuale depanari ulterioare, in caz ca va fi nevoie
- * -> obiectul instanta a clasei Class, in care se retine tipul clasei din care este instantiat obiectul pentru care sunt efectuate interogarile la BD. Se obtine folosind Java Reflection si implementeaza design patter-ul Singleton
- *
+ *Clasa de tip Data-Access-Object, folosita ca intermediar intre Business Logic si Database Connection.Are ca avriabile-instanta:,obiectul LOGGER, folosit pentru logging si eventuale depanari ulterioare, in caz ca va fi nevoie,obiectul instanta a clasei Class, in care se retine tipul clasei din care este instantiat obiectul pentru care sunt efectuate interogarile la BD. Se obtine folosind Java Reflection si implementeaza design patter-ul Singleton
  */
 public class AbstractDAO<T> {
     protected static final Logger LOGGER = Logger.getLogger(AbstractDAO.class.getName());
@@ -27,8 +23,7 @@ public class AbstractDAO<T> {
     private final Class<T> type;
 
     /**
-     * Constructor fara parametrii.
-     * Obtine tipul generic T al obiectului "type", folosing Java Reflection
+     * Constructor fara parametrii.Obtine tipul generic T al obiectului "type", folosing Java Reflection
      */
     @SuppressWarnings("unchecked")
     public AbstractDAO() {
@@ -169,7 +164,7 @@ public class AbstractDAO<T> {
             statement = connection.prepareStatement(query);
             statement.setInt(1, id);
             int value = statement.executeUpdate();
-            return id;
+            return value;
         } catch (SQLException e) {
             LOGGER.log(Level.WARNING, type.getName() + "DAO:findById " + e.getMessage());
         } finally {
@@ -181,9 +176,7 @@ public class AbstractDAO<T> {
     }
 
     /**
-     * Metoda creeaza o lista de obiecte de tipul T, folosind datele stocate in obiectul de tip ResultSet trimis ca parametru
-     * Se foloseste Java Reflection pentru a extrage Field-urile clasei de tipul T si pentru a obtine metodele setter pentru a crea un nou obiect cu valorile stocate in obeictul de tip ResultSet trimis ca parametru
-     *
+     * Metoda creeaza o lista de obiecte de tipul T, folosind datele stocate in obiectul de tip ResultSet trimis ca parametruSe foloseste Java Reflection pentru a extrage Field-urile clasei de tipul T si pentru a obtine metodele setter pentru a crea un nou obiect cu valorile stocate in obeictul de tip ResultSet trimis ca parametru
      * @param resultSet obiect de tipul ResultSet
      * @return lista de obiecte de tipul T
      */
@@ -215,9 +208,7 @@ public class AbstractDAO<T> {
         return list;
     }
     /**
-     * Metoda executa query-ul generat de metoda createInsertQuery()
-     * Arunca exceptii de tipul SQLException | IntrospectionException | IllegalAccessException | InvocationTargetException in cazul unor inconsistente ale datelor
-     *
+     * Metoda executa query-ul generat de metoda createInsertQuery().Arunca exceptii de tipul SQLException | IntrospectionException | IllegalAccessException | InvocationTargetException in cazul unor inconsistente ale datelor
      * @return obiectul de tipul T inserat
      */
     public T insert(T t) {
@@ -249,9 +240,7 @@ public class AbstractDAO<T> {
         return null;
     }
     /**
-     * Metoda executa query-ul generat de metoda createUpdateQuery()
-     * Arunca exceptii de tipul SQLException | IntrospectionException | IllegalAccessException | InvocationTargetException in cazul unor inconsistente ale datelor
-     *
+     * Metoda executa query-ul generat de metoda createUpdateQuery().Arunca exceptii de tipul SQLException | IntrospectionException | IllegalAccessException | InvocationTargetException in cazul unor inconsistente ale datelor
      * @return obiectul de tipul T inserat
      */
     public T update(T t) {
